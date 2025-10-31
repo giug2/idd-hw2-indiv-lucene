@@ -1,0 +1,4 @@
+Pioggia
+----------------------------------------------------------
+
+La pioggia è la più comune precipitazione atmosferica e si forma quando gocce separate di acqua cadono al suolo dalle nuvole. Il suo codice METAR è "RA" (dall'inglese rain).

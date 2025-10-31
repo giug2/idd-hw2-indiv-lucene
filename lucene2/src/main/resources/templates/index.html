@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucene Search</title>
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #e6f7ff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Titolo */
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 1.875rem;
+            font-weight: bold;
+        }
+
+        /* Contenitore principale per il form */
+        .main-container {
+            max-width: 600px; 
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Form */
+        form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        form input[type="text"] {
+            flex-grow: 1; 
+            padding: 12px 15px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        form input[type="text"]:focus {
+            border-color: #007bff; 
+        }
+
+        form button {
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            background-color: #007bff; 
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        form button:hover {
+            background-color: #0056b3; 
+        }
+
+        /* Messaggio di Errore */
+        .error-message {
+            color: #D8000C;
+            background-color: #FFD2D2;
+            border: 1px solid #D8000C;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .error-message strong {
+            font-weight: bold;
+        }
+
+        /* Rettangolo Risultati */
+        .results-container {
+            margin-top: 20px; 
+        }
+
+        .results-container h2 {
+            margin-top: 0;
+            color: #444;
+            font-size: 1.5rem; 
+            font-weight: 600; 
+            margin-bottom: 16px;
+        }
+        
+        .results-container ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px; 
+        }
+        
+        .results-container li {
+            padding: 16px; 
+            background-color: #f9f9f9; 
+            border-radius: 8px; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.15s;
+        }
+        
+        .results-container li:hover {
+             background-color: #f0f0f0; 
+        }
+        
+        .results-container .filename {
+            font-weight: 500; 
+            color: #111827; 
+        }
+
+        .results-container .score {
+            font-size: 0.75rem; 
+            font-weight: 600;
+            color: #1d4ed8; 
+            background-color: #dbeafe; 
+            padding: 4px 12px;
+            border-radius: 9999px; 
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+        
+        <h1>Ricerca file</h1>
+
+        <form action="/" method="post">
+            <input type="text" name="query" 
+                   placeholder='es. nome/contenuto "parole"'
+                   th:value="${query}"> <button type="submit">Cerca</button>
+        </form>
+
+        <div th:if="${error}" class="error-message" role="alert">
+            <strong >Errore: </strong>
+            <span th:text="${error}"></span>
+        </div>
+
+        <div th:if="${results}" class="results-container">
+            <h2>Risultati:</h2>
+            
+            <ul>
+                <li th:each="r : ${results}">
+                    
+                    <span class="filename" th:text="${r.fileName}"></span>
+                    
+                    <span class="score">
+                        Score: 
+                        <span th:text="${#numbers.formatDecimal(r.score, 1, 2)}"></span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

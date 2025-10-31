@@ -1,0 +1,9 @@
+Bottiglia
+----------------------------------------------------------
+
+Una bottiglia è un contenitore di capacità variabile, attestata sull'ordine di grandezza del litro, a volte dotato di un tappo. Le bottiglie sono solitamente fatte di vetro, di plastica, carta, ceramica, metalli, e vengono tipicamente usate per contenere liquidi come: acqua, latte, bibite, birra, vino, olio da cucina, ma anche carburante, medicinali, sapone liquido, shampoo, inchiostro, eccetera.
+
+
+== Storia ==
+
+Le prime tracce storiche inerenti alle origini della bottiglia in vetro risalgono al I secolo d.C., quando nei territori siriani vennero realizzati, per la prima volta, piccoli contenitori di vetro tramite la tecnica del soffio nella pasta semi-liquida, che divergevano dai prodotti precedenti, tipicamente a forma di anfore e brocche e aventi pareti notevolmente più spesse a causa del procedimento tecnico tradizionale della colata del vetro in stampi.

@@ -1,0 +1,4 @@
+Web
+----------------------------------------------------------
+
+Il World Wide Web (termine in lingua inglese traducibile in italiano come "rete di ampiezza mondiale" o "rete mondiale"), abbreviato web, WWW o W3, è uno dei principali servizi di Internet, che permette di navigare e usufruire di un insieme molto vasto di contenuti, multimediali e non, interrelati tramite collegamenti ipertestuali (link), e di fruire di ulteriori servizi accessibili a tutti o ad una parte selezionata degli utenti di Internet (mediante autenticazione).

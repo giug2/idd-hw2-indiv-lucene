@@ -1,0 +1,4 @@
+Bottiglia
+----------------------------------------------------------
+
+Una bottiglia è un contenitore di capacità variabile, attestata sull'ordine di grandezza del litro, a volte dotato di un tappo.

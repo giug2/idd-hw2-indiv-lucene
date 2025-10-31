@@ -1,0 +1,5 @@
+Libro
+----------------------------------------------------------
+
+Un libro è un insieme di fogli, stampati oppure manoscritti, delle stesse dimensioni, rilegati insieme in un certo ordine e racchiusi da una copertina.
+Il libro è il veicolo più diffuso del sapere. L'insieme delle opere stampate, inclusi i libri, è detto letteratura.

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucene Web Search</title>
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #e6f7ff; /* Sfondo Blu Pastello */
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Contenitore principale per il form */
+        .main-container {
+            max-width: 600px; /* Era max-w-3xl, ma 600px è meglio per questo stile */
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Titolo */
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 1.875rem; /* 30px (come il tuo text-3xl) */
+            font-weight: bold;
+        }
+
+        /* Form */
+        form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        form input[type="text"] {
+            flex-grow: 1; /* Occupa lo spazio */
+            padding: 12px 15px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        form input[type="text"]:focus {
+            border-color: #007bff; /* Simile al tuo focus:ring-blue-500 */
+        }
+
+        form button {
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            background-color: #007bff; /* Blu (simile al tuo bg-blue-600) */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        form button:hover {
+            background-color: #0056b3; /* Simile al tuo hover:bg-blue-700 */
+        }
+
+        /* Messaggio di Errore */
+        .error-message {
+            color: #D8000C;
+            background-color: #FFD2D2;
+            border: 1px solid #D8000C;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .error-message strong {
+            font-weight: bold;
+        }
+
+        /* Rettangolo Risultati */
+        .results-container {
+            margin-top: 20px; /* Spazio sopra */
+        }
+
+        .results-container h2 {
+            margin-top: 0;
+            color: #444; /* Simile al tuo text-gray-700 */
+            font-size: 1.5rem; /* 24px (come text-2xl) */
+            font-weight: 600; /*semibold*/
+            margin-bottom: 16px; /* mb-4 */
+        }
+        
+        .results-container ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px; /* Simile al tuo space-y-3 */
+        }
+        
+        .results-container li {
+            padding: 16px; /* p-4 */
+            background-color: #f9f9f9; /* Simile al tuo bg-gray-50 */
+            border-radius: 8px; /* rounded-lg */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.15s;
+        }
+        
+        .results-container li:hover {
+             background-color: #f0f0f0; /* Simile al tuo hover:bg-gray-100 */
+        }
+        
+        .results-container .filename {
+            font-weight: 500; /* medium */
+            color: #111827; /* text-gray-900 */
+        }
+
+        .results-container .score {
+            font-size: 0.75rem; /* text-xs */
+            font-weight: 600; /* font-semibold */
+            color: #1d4ed8; /* text-blue-800 */
+            background-color: #dbeafe; /* bg-blue-100 */
+            padding: 4px 12px; /* px-3 py-1 */
+            border-radius: 9999px; /* rounded-full */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <h1>🔍 Ricerca file indicizzati</h1>
+
+        <form action="/" method="post">
+            <input type="text" name="query" 
+                   placeholder='es. contenuto "battle of gods" oppure argomento:Python'
+                   th:value="${query}"> <button type="submit">Cerca</button>
+        </form>
+
+        <div th:if="${error}" class="error-message" role="alert">
+            <strong >Errore: </strong>
+            <span th:text="${error}"></span>
+        </div>
+
+        <div th:if="${results}" class="results-container">
+            <h2>Risultati:</h2>
+            
+            <ul>
+                <li th:each="r : ${results}">
+                    
+                    <span class="filename" th:text="${r.fileName}"></span>
+                    
+                    <span class="score">
+                        Score: 
+                        <span th:text="${#numbers.formatDecimal(r.score, 1, 2)}"></span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+Computer
+----------------------------------------------------------
+
+Un computer (pronuncia italiana: /komˈpjuter/), in italiano anche noto come elaboratore o calcolatore, è una macchina automatizzata programmabile in grado di eseguire sia complessi calcoli matematici (calcolatore) sia altri tipi di elaborazioni dati (elaboratore).
+Concepito come una macchina per automatizzare alcune capacità della mente umana, come ad esempio il calcolo e la capacità di memorizzazione potenziandone la portata e applicandole alla soluzione di particolari problemi scientifici e ingegneristici, 
+a partire dalla seconda metà del XX secolo, evolve in macchina in grado di eseguire le elaborazioni dati più varie. Ci si riferisce comunemente al computer come ad un dispositivo elettronico e digitale, programmabile a scopo generico, costruito secondo il modello teorico-computazionale della cosiddetta macchina di Turing e la cosiddetta architettura di von Neumann, anche se oggi tuttavia il termine assume il significato più generico di sistema elettronico di elaborazione programmabile e non programmabile, includendo dunque una vasta gamma di tipologie di dispositivi:
+sebbene i computer programmabili a scopo generico siano oggi i più diffusi, esistono infatti in specifici ambiti di applicazione modelli di computer dedicati a vari campi e settori come automazione industriale, domotica, computer grafica.

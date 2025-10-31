@@ -1,0 +1,4 @@
+Java
+----------------------------------------------------------
+
+In informatica, Java Web Start (noto anche come JavaWS, javaws o JAWS) è stato un framework sviluppato da Sun Microsystems (ora Oracle), che permetteva agli utenti di scaricare ed avviare applicazioni software per Java Platform direttamente da Internet utilizzando un browser web.

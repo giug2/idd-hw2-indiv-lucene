@@ -1,0 +1,5 @@
+Pioggia
+----------------------------------------------------------
+
+La pioggia è la più comune precipitazione atmosferica e si forma quando gocce separate di acqua cadono al suolo dalle nuvole. Il suo codice METAR è "RA" (dall'inglese rain).
+La pioggia gioca un ruolo fondamentale nel ciclo dell'acqua, nel quale il liquido che evapora dagli oceani sotto forma di vapore si condensa nelle nuvole e cade di nuovo a terra, ritornando negli oceani attraverso il ruscellamento, i laghi, i fiumi e le falde sotterranee, per ripetere nuovamente il ciclo.
