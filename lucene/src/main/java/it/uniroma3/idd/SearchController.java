@@ -1,9 +1,6 @@
 package it.uniroma3.idd;
 
 import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.core.KeywordAnalyzer;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.analysis.core.SimpleAnalyzer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,11 +9,19 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+
 @Controller
 public class SearchController {
-
     private final Path indexPath = Paths.get("index");
-    private final Searcher searcher = new Searcher(indexPath);
+    private final Searcher searcher;
+
+    public SearchController() {
+        try {
+            this.searcher = new Searcher(indexPath);
+        } catch (Exception e) {
+            throw new RuntimeException("Errore nell'inizializzazione del Searcher", e);
+        }
+    }
 
     @GetMapping("/")
     public String home() {
@@ -39,20 +44,12 @@ public class SearchController {
             }
 
             String field = parts[0].toLowerCase();
-            String queryText = parts[1]; 
-            
-            Analyzer analyzer;
-            String luceneField;
+            String queryText = parts[1];
 
+            String luceneField;
             switch (field) {
-                case "nome" -> {
-                    luceneField = "nome";
-                    analyzer = new SimpleAnalyzer();
-                }
-                case "contenuto" -> {
-                    luceneField = "contenuto";
-                    analyzer = new StandardAnalyzer();
-                }
+                case "nome" -> luceneField = "nome";
+                case "contenuto" -> luceneField = "contenuto";
                 default -> {
                     model.addAttribute("error", "Campo non valido: usa 'nome' o 'contenuto'");
                     return "index";
@@ -61,19 +58,20 @@ public class SearchController {
 
             String searchText = queryText;
 
+            // Conversione coerente con l'argomento estratto in Indexer
             String expectedTopic = queryText.replace("\"", "").replace(" ", "_").toLowerCase();
-           
-            List<SearchResult> results = searcher.search(luceneField, searchText, analyzer, expectedTopic);
-            
+
+            List<SearchResult> results = searcher.search(luceneField, searchText, expectedTopic);
+
             model.addAttribute("results", results);
-            model.addAttribute("query", query); 
-            model.addAttribute("expectedTopic", expectedTopic); 
+            model.addAttribute("query", query);
+            model.addAttribute("expectedTopic", expectedTopic);
 
         } catch (Exception e) {
             model.addAttribute("error", "Errore: " + e.getMessage());
-            e.printStackTrace(); 
+            e.printStackTrace();
         }
-        
+
         return "index";
     }
 }

@@ -2,17 +2,11 @@ package it.uniroma3.idd;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.analysis.core.SimpleAnalyzer;
-import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.core.LowerCaseFilterFactory;
-import org.apache.lucene.analysis.core.WhitespaceTokenizerFactory;
-import org.apache.lucene.analysis.custom.CustomAnalyzer;
-import org.apache.lucene.analysis.miscellaneous.PerFieldAnalyzerWrapper;
-import org.apache.lucene.analysis.miscellaneous.WordDelimiterGraphFilterFactory;
 
+import org.apache.lucene.analysis.Analyzer;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
 
 @SpringBootApplication
 public class LuceneWebApp {
@@ -21,12 +15,8 @@ public class LuceneWebApp {
         Path docsPath = Paths.get("docs");
         Path indexPath = Paths.get("index");
 
-        // Analyzer personalizzato per gestire tokenizzazione e minuscole
-        Analyzer analyzerCustom = CustomAnalyzer.builder()
-                    .withTokenizer(WhitespaceTokenizerFactory.class)
-                    .addTokenFilter(LowerCaseFilterFactory.class)
-                    .addTokenFilter(WordDelimiterGraphFilterFactory.class)
-                    .build();
+        // Analyzer personalizzato ottenuto dalla factory
+        Analyzer analyzerCustom = AnalyzerFactory.getCustomAnalyzer();
 
         // Indicizza all'avvio
         System.err.println("----- AVVIO INDICIZZAZIONE -----");
@@ -38,7 +28,7 @@ public class LuceneWebApp {
         Stats statistiche = new Stats();
         statistiche.statsIndex(indexPath);
         System.err.println("--------------------------------");
-        
+
         SpringApplication.run(LuceneWebApp.class, args);
     }
 }

@@ -4,3 +4,4 @@ it\uniroma3\idd\LuceneWebApp.class
 it\uniroma3\idd\SearchResult.class
 it\uniroma3\idd\Indexer.class
 it\uniroma3\idd\SearchController.class
+it\uniroma3\idd\AnalyzerFactory.class

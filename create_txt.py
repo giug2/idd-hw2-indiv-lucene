@@ -8,7 +8,6 @@ def genera_contenuto_da_wiki(titolo_ricerca: str, numero_frasi: int = 1) -> str:
     try:
         # Imposta la lingua italiana
         wikipedia.set_lang("it")
-        
         riassunto = wikipedia.summary(titolo_ricerca, sentences=numero_frasi)
         
         return riassunto
@@ -73,3 +72,4 @@ def crea_file_wiki(cartella_output: str = "docs", numero_file: int = 100):
 
 if __name__ == "__main__":
     crea_file_wiki(numero_file=100)
+    

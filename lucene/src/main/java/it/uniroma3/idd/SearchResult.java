@@ -1,5 +1,6 @@
 package it.uniroma3.idd;
 
+
 public class SearchResult {
     private final String fileName;
     private final float score;
