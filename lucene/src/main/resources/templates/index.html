@@ -3,24 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucene Web Search</title>
+    <title>Lucene Search</title>
     
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #e6f7ff; /* Sfondo Blu Pastello */
+            background-color: #e6f7ff;
             margin: 0;
             padding: 20px;
-        }
-
-        /* Contenitore principale per il form */
-        .main-container {
-            max-width: 600px; /* Era max-w-3xl, ma 600px è meglio per questo stile */
-            margin: 40px auto;
-            padding: 30px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         /* Titolo */
@@ -28,8 +18,18 @@
             text-align: center;
             color: #333;
             margin-bottom: 25px;
-            font-size: 1.875rem; /* 30px (come il tuo text-3xl) */
+            font-size: 1.875rem;
             font-weight: bold;
+        }
+
+        /* Contenitore principale per il form */
+        .main-container {
+            max-width: 600px; 
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         /* Form */
@@ -40,7 +40,7 @@
         }
 
         form input[type="text"] {
-            flex-grow: 1; /* Occupa lo spazio */
+            flex-grow: 1; 
             padding: 12px 15px;
             font-size: 16px;
             border: 1px solid #ddd;
@@ -50,7 +50,7 @@
         }
 
         form input[type="text"]:focus {
-            border-color: #007bff; /* Simile al tuo focus:ring-blue-500 */
+            border-color: #007bff; 
         }
 
         form button {
@@ -58,7 +58,7 @@
             font-size: 16px;
             font-weight: 600;
             color: #fff;
-            background-color: #007bff; /* Blu (simile al tuo bg-blue-600) */
+            background-color: #007bff; 
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -66,7 +66,7 @@
         }
 
         form button:hover {
-            background-color: #0056b3; /* Simile al tuo hover:bg-blue-700 */
+            background-color: #0056b3; 
         }
 
         /* Messaggio di Errore */
@@ -84,15 +84,15 @@
 
         /* Rettangolo Risultati */
         .results-container {
-            margin-top: 20px; /* Spazio sopra */
+            margin-top: 20px; 
         }
 
         .results-container h2 {
             margin-top: 0;
-            color: #444; /* Simile al tuo text-gray-700 */
-            font-size: 1.5rem; /* 24px (come text-2xl) */
-            font-weight: 600; /*semibold*/
-            margin-bottom: 16px; /* mb-4 */
+            color: #444;
+            font-size: 1.5rem; 
+            font-weight: 600; 
+            margin-bottom: 16px;
         }
         
         .results-container ul {
@@ -101,13 +101,13 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            gap: 12px; /* Simile al tuo space-y-3 */
+            gap: 12px; 
         }
         
         .results-container li {
-            padding: 16px; /* p-4 */
-            background-color: #f9f9f9; /* Simile al tuo bg-gray-50 */
-            border-radius: 8px; /* rounded-lg */
+            padding: 16px; 
+            background-color: #f9f9f9; 
+            border-radius: 8px; 
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -115,33 +115,34 @@
         }
         
         .results-container li:hover {
-             background-color: #f0f0f0; /* Simile al tuo hover:bg-gray-100 */
+             background-color: #f0f0f0; 
         }
         
         .results-container .filename {
-            font-weight: 500; /* medium */
-            color: #111827; /* text-gray-900 */
+            font-weight: 500; 
+            color: #111827; 
         }
 
         .results-container .score {
-            font-size: 0.75rem; /* text-xs */
-            font-weight: 600; /* font-semibold */
-            color: #1d4ed8; /* text-blue-800 */
-            background-color: #dbeafe; /* bg-blue-100 */
-            padding: 4px 12px; /* px-3 py-1 */
-            border-radius: 9999px; /* rounded-full */
+            font-size: 0.75rem; 
+            font-weight: 600;
+            color: #1d4ed8; 
+            background-color: #dbeafe; 
+            padding: 4px 12px;
+            border-radius: 9999px; 
         }
     </style>
 </head>
+
 <body>
 
     <div class="main-container">
         
-        <h1>🔍 Ricerca file indicizzati</h1>
+        <h1>Ricerca file</h1>
 
         <form action="/" method="post">
             <input type="text" name="query" 
-                   placeholder='es. contenuto "battle of gods" oppure argomento:Python'
+                   placeholder='es. nome/contenuto "parole"'
                    th:value="${query}"> <button type="submit">Cerca</button>
         </form>
 

@@ -14,6 +14,7 @@ public class Indexer {
     private final Path docsPath;
     private final Path indexPath;
     private final Analyzer analyzer;
+    private final long start = System.currentTimeMillis();
 
     public Indexer(Path docsPath, Path indexPath, Analyzer analyzer) {
         this.docsPath = docsPath;
@@ -53,6 +54,10 @@ public class Indexer {
                         }
                     });
         }
+        long end = System.currentTimeMillis();
+        long elapsed = end - start;
+
+        System.out.println("Tempo impiegato: " + elapsed + " ms");
     }
 
     private void indexDoc(IndexWriter writer, Path file) throws IOException {
@@ -97,6 +102,7 @@ public class Indexer {
         doc.add(new StringField("argomento", argomento, Field.Store.YES));
 
         writer.addDocument(doc);
+
         System.out.println("Indicizzato: " + nomeFile + " (Argomento: " + argomento + ")");
     }
 }
