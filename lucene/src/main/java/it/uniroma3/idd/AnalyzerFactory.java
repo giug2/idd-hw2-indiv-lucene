@@ -11,11 +11,7 @@ import org.apache.lucene.analysis.it.ItalianAnalyzer;
 
 public class AnalyzerFactory {
     public static Analyzer getCustomAnalyzer() throws IOException {
-        return CustomAnalyzer.builder()
-                .withTokenizer(WhitespaceTokenizerFactory.class)
-                .addTokenFilter(LowerCaseFilterFactory.class)
-                .addTokenFilter(WordDelimiterGraphFilterFactory.class)
-                .build();
+        return new ItalianAnalyzer();
     }
 }
 

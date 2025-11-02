@@ -1,0 +1,235 @@
+==============================
+Eseguo query: contenuto "cibo"
+==============================
+Trovati 10 risultati:
+ - 159_Cibo.txt
+ - 169_Cibo.txt
+ - 178_Cibo.txt
+ - 189_Cibo.txt
+ - 152_Cibo.txt
+ - 177_Cibo.txt
+ - 184_Cibo.txt
+ - 107_Cibo.txt
+ - 116_Cibo.txt
+ - 154_Cibo.txt
+
+--- METRICHE DELLA QUERY ---
+Query: '"cibo"' su campo 'contenuto'
+Argomento Atteso (Ground Truth): cibo
+------------------------------
+Documenti Rilevanti TOTALE (nell'indice): 11
+Documenti restituiti (k=10): 10
+Documenti Rilevanti Trovati (tra i k): 10
+Precision@10: 1,0000
+Recall@10: 0,9091
+------------------------------
+
+==============================
+Eseguo query: nome "cibo"
+==============================
+Trovati 10 risultati:
+ - 107_Cibo.txt
+ - 116_Cibo.txt
+ - 152_Cibo.txt
+ - 154_Cibo.txt
+ - 159_Cibo.txt
+ - 165_Cibo.txt
+ - 169_Cibo.txt
+ - 177_Cibo.txt
+ - 178_Cibo.txt
+ - 184_Cibo.txt
+
+--- METRICHE DELLA QUERY ---
+Query: '"cibo"' su campo 'nome'
+Argomento Atteso (Ground Truth): cibo
+------------------------------
+Documenti Rilevanti TOTALE (nell'indice): 11
+Documenti restituiti (k=10): 10
+Documenti Rilevanti Trovati (tra i k): 10
+Precision@10: 1,0000
+Recall@10: 0,9091
+------------------------------
+
+==============================
+Eseguo query: contenuto "sistema"
+==============================
+Trovati 10 risultati:
+ - 046_Energia.txt
+ - 061_Energia.txt
+ - 066_Energia.txt
+ - 067_Energia.txt
+ - 082_Energia.txt
+ - 097_Marte.txt
+ - 008_Marte.txt
+ - 055_Marte.txt
+ - 070_Marte.txt
+ - 089_Marte.txt
+
+--- METRICHE DELLA QUERY ---
+Query: '"sistema"' su campo 'contenuto'
+Argomento Atteso (Ground Truth): sistema
+------------------------------
+Documenti Rilevanti TOTALE (nell'indice): 0
+Documenti restituiti (k=10): 10
+Documenti Rilevanti Trovati (tra i k): 0
+Precision@10: 0,0000
+Recall@10: 0,0000
+------------------------------
+
+==============================
+Eseguo query: nome "sistema"
+==============================
+Nessun risultato trovato.
+
+--- METRICHE DELLA QUERY ---
+Query: '"sistema"' su campo 'nome'
+Argomento Atteso (Ground Truth): sistema
+------------------------------
+Documenti Rilevanti TOTALE (nell'indice): 0
+Documenti restituiti (k=10): 0
+Documenti Rilevanti Trovati (tra i k): 0
+Precision@10: 0,0000
+Recall@10: 0,0000
+------------------------------
+
+==============================
+Eseguo query: contenuto "gocce"
+==============================
+Trovati 10 risultati:
+ - 101_Pioggia.txt
+ - 103_Pioggia.txt
+ - 118_Pioggia.txt
+ - 148_Pioggia.txt
+ - 160_Pioggia.txt
+ - 167_Pioggia.txt
+ - 114_Pioggia.txt
+ - 117_Pioggia.txt
+ - 129_Pioggia.txt
+ - 187_Pioggia.txt
+
+--- METRICHE DELLA QUERY ---
+Query: '"gocce"' su campo 'contenuto'
+Argomento Atteso (Ground Truth): gocce
+------------------------------
+Documenti Rilevanti TOTALE (nell'indice): 0
+Documenti restituiti (k=10): 10
+Documenti Rilevanti Trovati (tra i k): 0
+Precision@10: 0,0000
+Recall@10: 0,0000
+------------------------------
+
+==============================
+Eseguo query: nome "gocce"
+==============================
+Nessun risultato trovato.
+
+--- METRICHE DELLA QUERY ---
+Query: '"gocce"' su campo 'nome'
+Argomento Atteso (Ground Truth): gocce
+------------------------------
+Documenti Rilevanti TOTALE (nell'indice): 0
+Documenti restituiti (k=10): 0
+Documenti Rilevanti Trovati (tra i k): 0
+Precision@10: 0,0000
+Recall@10: 0,0000
+------------------------------
+
+==============================
+Eseguo query: contenuto ""
+==============================
+Nessun risultato trovato.
+
+--- METRICHE DELLA QUERY ---
+Query: '""' su campo 'contenuto'
+Argomento Atteso (Ground Truth):
+------------------------------
+Documenti Rilevanti TOTALE (nell'indice): 0
+Documenti restituiti (k=10): 0
+Documenti Rilevanti Trovati (tra i k): 0
+Precision@10: 0,0000
+Recall@10: 0,0000
+------------------------------
+
+==============================
+Eseguo query: nome ""
+==============================
+Trovati 10 risultati:
+ - 001_Acqua.txt
+ - 002_Supermercato.txt
+ - 003_Nazione.txt
+ - 004_Java.txt
+ - 005_Web.txt
+ - 006_Java.txt
+ - 007_Java.txt
+ - 008_Marte.txt
+ - 009_Supermercato.txt
+ - 010_Python.txt
+
+--- METRICHE DELLA QUERY ---
+Query: '""' su campo 'nome'
+Argomento Atteso (Ground Truth):
+------------------------------
+Documenti Rilevanti TOTALE (nell'indice): 0
+Documenti restituiti (k=10): 10
+Documenti Rilevanti Trovati (tra i k): 0
+Precision@10: 0,0000
+Recall@10: 0,0000
+------------------------------
+
+==============================
+Eseguo query: contenuto "alto livello"
+==============================
+Trovati 9 risultati:
+ - 010_Python.txt
+ - 031_Python.txt
+ - 050_Python.txt
+ - 076_Python.txt
+ - 084_Python.txt
+ - 020_Python.txt
+ - 081_Python.txt
+ - 012_Python.txt
+ - 028_Python.txt
+
+--- METRICHE DELLA QUERY ---
+Query: '"alto livello"' su campo 'contenuto'
+Argomento Atteso (Ground Truth): alto_livello
+------------------------------
+Documenti Rilevanti TOTALE (nell'indice): 0
+Documenti restituiti (k=10): 9
+Documenti Rilevanti Trovati (tra i k): 0
+Precision@10: 0,0000
+Recall@10: 0,0000
+------------------------------
+
+==============================
+Eseguo query: nome "alto livello"
+==============================
+Nessun risultato trovato.
+
+--- METRICHE DELLA QUERY ---
+Query: '"alto livello"' su campo 'nome'
+Argomento Atteso (Ground Truth): alto_livello
+------------------------------
+Documenti Rilevanti TOTALE (nell'indice): 0
+Documenti restituiti (k=10): 0
+Documenti Rilevanti Trovati (tra i k): 0
+Precision@10: 0,0000
+Recall@10: 0,0000
+------------------------------
+
+==============================
+Eseguo query: nome "001"
+==============================
+Trovati 1 risultati:
+ - 001_Acqua.txt
+
+--- METRICHE DELLA QUERY ---
+Query: '"001"' su campo 'nome'
+Argomento Atteso (Ground Truth): 001
+------------------------------
+Documenti Rilevanti TOTALE (nell'indice): 0
+Documenti restituiti (k=10): 1
+Documenti Rilevanti Trovati (tra i k): 0
+Precision@10: 0,0000
+Recall@10: 0,0000
+------------------------------
