@@ -24,8 +24,3 @@ Il sistema implementa una pipeline completa che include:
 
   
 ``mvn spring-boot:run``
-
-1.  [cite\_start]Per calcolare le metriche, era necessario un "ground truth" (un'etichetta di pertinenza) per ogni documento[cite: 282].
-2.  [cite\_start]Data l'assenza di etichette, si è usata una soluzione pragmatica: definire il "ground truth" come l'argomento del file (estratto dal nome)[cite: 284].
-3.  [cite\_start]Quando si cerca "gocce" nel *contenuto*, il sistema recupera correttamente i file `*_Pioggia.txt`[cite: 286].
-4.  Tuttavia, il sistema confronta i documenti trovati (argomento "Pioggia") con il ground truth atteso ("gocce"). [cite\_start]Poiché i due non corrispondono, i documenti (sebbene pertinenti) sono considerati non rilevanti ai fini del calcolo, portando le metriche a zero[cite: 287].
