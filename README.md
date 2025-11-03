@@ -24,3 +24,6 @@ Il sistema implementa una pipeline completa che include:
 
   
 ``mvn spring-boot:run``
+
+## Autori
+[Gaglione Giulia](https://github.com/giug2) 
