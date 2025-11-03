@@ -74,4 +74,19 @@ public class SearchController {
 
         return "index";
     }
+
+    @GetMapping("/file/{fileName:.+}")
+    @ResponseBody
+    public org.springframework.core.io.Resource serveFile(@PathVariable String fileName) {
+        try {
+            Path file = Paths.get("docs").resolve(fileName).normalize();
+            org.springframework.core.io.Resource resource = new org.springframework.core.io.UrlResource(file.toUri());
+            if (!resource.exists()) {
+                throw new RuntimeException("File non trovato: " + fileName);
+            }
+            return resource;
+        } catch (Exception e) {
+            throw new RuntimeException("Errore nel recupero del file: " + fileName, e);
+        }
+    }
 }

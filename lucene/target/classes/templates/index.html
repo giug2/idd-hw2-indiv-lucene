@@ -22,7 +22,7 @@
             font-weight: bold;
         }
 
-        /* Contenitore principale per il form */
+        /* Contenitore principale */
         .main-container {
             max-width: 600px; 
             margin: 40px auto;
@@ -69,7 +69,7 @@
             background-color: #0056b3; 
         }
 
-        /* Messaggio di Errore */
+        /* Messaggi di errore */
         .error-message {
             color: #D8000C;
             background-color: #FFD2D2;
@@ -78,11 +78,8 @@
             border-radius: 8px;
             margin-bottom: 20px;
         }
-        .error-message strong {
-            font-weight: bold;
-        }
 
-        /* Rettangolo Risultati */
+        /* Risultati */
         .results-container {
             margin-top: 20px; 
         }
@@ -118,19 +115,39 @@
              background-color: #f0f0f0; 
         }
         
-        .results-container .filename {
+        /* Parte sinistra: nome + score */
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .filename {
             font-weight: 500; 
             color: #111827; 
         }
 
-        .results-container .score {
-            font-size: 0.75rem; 
+        .score {
+            font-size: 0.8rem; 
             font-weight: 600;
             color: #1d4ed8; 
             background-color: #dbeafe; 
-            padding: 4px 12px;
+            padding: 4px 10px;
             border-radius: 9999px; 
         }
+
+        /* Link "Apri" */
+        .open-link {
+            font-size: 0.9rem;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .open-link:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 
@@ -143,26 +160,30 @@
         <form action="/" method="post">
             <input type="text" name="query" 
                    placeholder='es. nome/contenuto "parole"'
-                   th:value="${query}"> <button type="submit">Cerca</button>
+                   th:value="${query}">
+            <button type="submit">Cerca</button>
         </form>
 
+        <!-- Messaggi di errore -->
         <div th:if="${error}" class="error-message" role="alert">
-            <strong >Errore: </strong>
+            <strong>Errore: </strong>
             <span th:text="${error}"></span>
         </div>
 
+        <!-- Risultati -->
         <div th:if="${results}" class="results-container">
             <h2>Risultati:</h2>
             
             <ul>
                 <li th:each="r : ${results}">
-                    
-                    <span class="filename" th:text="${r.fileName}"></span>
-                    
-                    <span class="score">
-                        Score: 
-                        <span th:text="${#numbers.formatDecimal(r.score, 1, 2)}"></span>
-                    </span>
+                    <div class="file-info">
+                        <span class="filename" th:text="${r.fileName}"></span>
+                        <span class="score">
+                            Score: <span th:text="${#numbers.formatDecimal(r.score, 1, 2)}"></span>
+                        </span>
+                    </div>
+
+                    <a class="open-link" th:href="@{'/file/' + ${r.fileName}}" target="_blank">Apri</a>
                 </li>
             </ul>
         </div>
