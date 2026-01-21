@@ -80,7 +80,6 @@ public class Indexer {
 
         doc.add(new TextField("nome", nomeFile, Field.Store.YES));
         doc.add(new TextField("contenuto", content, Field.Store.YES));
-
         doc.add(new StringField("argomento", argomento, Field.Store.YES));
 
         writer.addDocument(doc);

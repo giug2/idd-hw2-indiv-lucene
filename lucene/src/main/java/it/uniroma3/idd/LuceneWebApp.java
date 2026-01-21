@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 public class LuceneWebApp {
 
     public static void main(String[] args) throws Exception {
-        Path docsPath = Paths.get("docs");
+        Path docsPath = Paths.get("..", "input");
         Path indexPath = Paths.get("index");
 
         // Analyzer personalizzato ottenuto dalla factory

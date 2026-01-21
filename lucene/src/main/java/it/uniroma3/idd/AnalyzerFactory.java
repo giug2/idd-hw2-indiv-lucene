@@ -16,19 +16,19 @@ public class AnalyzerFactory {
 }
 
     /*
-    CustomAnalyzer.builder()
-                .withTokenizer("standard")
-                .addTokenFilter("lowercase")
-                .addTokenFilter("stop", "words", "stopword.txt")
-                .addTokenFilter("italianlightstem")
-                .build();
+        CustomAnalyzer.builder()
+                    .withTokenizer("standard")
+                    .addTokenFilter("lowercase")
+                    .addTokenFilter("stop", "words", "stopword.txt")
+                    .addTokenFilter("italianlightstem")
+                    .build();
 
-    CustomAnalyzer.builder()
-                .withTokenizer(WhitespaceTokenizerFactory.class)
-                .addTokenFilter(LowerCaseFilterFactory.class)
-                .addTokenFilter(WordDelimiterGraphFilterFactory.class)
-                .build();
+        CustomAnalyzer.builder()
+                    .withTokenizer(WhitespaceTokenizerFactory.class)
+                    .addTokenFilter(LowerCaseFilterFactory.class)
+                    .addTokenFilter(WordDelimiterGraphFilterFactory.class)
+                    .build();
 
-    new ItalianAnalyzer();
+        new ItalianAnalyzer();
     */
    

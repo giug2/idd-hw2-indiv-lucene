@@ -46,7 +46,6 @@ public class SearchController {
 
             String field = parts[0].toLowerCase();
             String queryText = parts[1];
-
             String luceneField;
             switch (field) {
                 case "nome" -> luceneField = "nome";
@@ -61,7 +60,6 @@ public class SearchController {
 
             // Conversione coerente con l'argomento estratto in Indexer
             String expectedTopic = queryText.replace("\"", "").replace(" ", "_").toLowerCase();
-
             List<SearchResult> results = searcher.search(luceneField, searchText, expectedTopic);
 
             model.addAttribute("results", results);
