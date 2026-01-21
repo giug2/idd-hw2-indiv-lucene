@@ -19,7 +19,7 @@ Il sistema implementa una pipeline completa che include:
 ## Prerequisiti
 * Java 17 (o superiore)
 * Python 3 
-* Maven (per la gestione delle dipendenze Java)
+* Maven (per la gestione delle dipendenze Java)  
 ``mvn spring-boot:run``
 
 ## Autori
