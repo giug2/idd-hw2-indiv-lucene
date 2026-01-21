@@ -5,7 +5,6 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.index.Terms;
 import org.apache.lucene.index.TermsEnum;
-
 import java.io.IOException;
 import java.nio.file.Path;
 

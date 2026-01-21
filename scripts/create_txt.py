@@ -1,8 +1,8 @@
 import wikipedia
 import os
 import random
-
 # pip install wikipedia
+
 
 def genera_contenuto_da_wiki(titolo_ricerca: str, numero_frasi: int = 1) -> str:
     try:
@@ -20,16 +20,16 @@ def genera_contenuto_da_wiki(titolo_ricerca: str, numero_frasi: int = 1) -> str:
 
 # Lista di argomenti da cui estrarre i contenuti
 argomenti_wiki = [
-#    "Python", 
-#    "Java",
-#    "Nazione", 
-#    "Web", 
-#    "Acqua",
-#    "Energia", 
-#    "Rivoluzione",
-#    "Marte",
-#    "Supermercato",
-#    "Film"
+    "Python", 
+    "Java",
+    "Nazione", 
+    "Web", 
+    "Acqua",
+    "Energia", 
+    "Rivoluzione",
+    "Marte",
+    "Supermercato",
+    "Film"
     "Pranzo",
     "Cibo",
     "Bottiglia",
@@ -41,6 +41,7 @@ argomenti_wiki = [
     "Pioggia",
     "Università"
 ]
+
 
 def crea_file_wiki(cartella_output: str = "docs", numero_file: int = 100):
     
@@ -69,6 +70,7 @@ def crea_file_wiki(cartella_output: str = "docs", numero_file: int = 100):
             print(f"Errore durante la creazione del file {nome_file}: {e}")
 
     print(f"\nGenerazione completata! Creati {numero_file} file con contenuti da Wikipedia.")
+
 
 if __name__ == "__main__":
     crea_file_wiki(numero_file=100)

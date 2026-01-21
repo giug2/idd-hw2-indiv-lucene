@@ -6,6 +6,7 @@ import time
 # URL della tua app Spring Boot
 BASE_URL = "http://localhost:8080/"
 
+
 # Lista di query da testare (campo + testo)
 QUERIES = [
     'contenuto "cibo"',
@@ -20,6 +21,7 @@ QUERIES = [
     'nome "alto livello"',
     'nome "001"'
 ]
+
 
 def run_queries():
     for query in QUERIES:
@@ -47,6 +49,7 @@ def run_queries():
             print(f"Errore nella query '{query}': {e}")
 
         time.sleep(1)  
+
 
 if __name__ == "__main__":
     run_queries()

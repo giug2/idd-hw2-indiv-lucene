@@ -6,7 +6,6 @@ import org.apache.lucene.index.*;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.*;
 import org.apache.lucene.store.FSDirectory;
-
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +15,12 @@ public class Searcher {
     private final Path indexPath;
     private final Analyzer analyzer; // Analyzer condiviso con Indexer e SearchController
 
+
     public Searcher(Path indexPath) throws Exception {
         this.indexPath = indexPath;
         this.analyzer = AnalyzerFactory.getCustomAnalyzer(); 
     }
+
 
     public List<SearchResult> search(String field, String queryText, String expectedTopic) throws Exception {
         List<SearchResult> resultsList = new ArrayList<>();
@@ -78,7 +79,6 @@ public class Searcher {
             System.out.println("Recall@10: " + String.format("%.4f", recall));
             System.out.println("------------------------------\n");
         }
-
         return resultsList;
     }
 }

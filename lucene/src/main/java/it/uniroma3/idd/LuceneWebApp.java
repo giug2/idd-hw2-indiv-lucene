@@ -2,7 +2,6 @@ package it.uniroma3.idd;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import org.apache.lucene.analysis.Analyzer;
 import java.nio.file.Path;
 import java.nio.file.Paths;

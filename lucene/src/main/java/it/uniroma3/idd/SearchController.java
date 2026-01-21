@@ -4,7 +4,6 @@ import org.apache.lucene.analysis.Analyzer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -23,10 +22,12 @@ public class SearchController {
         }
     }
 
+
     @GetMapping("/")
     public String home() {
         return "index";
     }
+
 
     @PostMapping("/")
     public String search(@RequestParam("query") String query, Model model) {
@@ -74,6 +75,7 @@ public class SearchController {
 
         return "index";
     }
+    
 
     @GetMapping("/file/{fileName:.+}")
     @ResponseBody

@@ -4,7 +4,6 @@ import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.document.*;
 import org.apache.lucene.index.*;
 import org.apache.lucene.store.*;
-
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.stream.Stream;
@@ -18,11 +17,13 @@ public class Indexer {
     // Analyzer gestito tramite factory
     private final Analyzer analyzer;
 
+
     public Indexer(Path docsPath, Path indexPath, Analyzer analyzer) {
         this.docsPath = docsPath;
         this.indexPath = indexPath;
         this.analyzer = analyzer;
     }
+
 
     public void createIndex() throws IOException {
         Directory dir = FSDirectory.open(indexPath);
@@ -35,6 +36,7 @@ public class Indexer {
 
         System.out.println("Indicizzazione completata.");
     }
+
 
     private void indexDocs(IndexWriter writer, Path path) throws IOException {
         try (Stream<Path> stream = Files.walk(path)) {
@@ -52,6 +54,7 @@ public class Indexer {
         long elapsed = end - start;
         System.out.println("Tempo impiegato: " + elapsed + " ms");
     }
+
 
     private void indexDoc(IndexWriter writer, Path file) throws IOException {
         String content = Files.readString(file);
